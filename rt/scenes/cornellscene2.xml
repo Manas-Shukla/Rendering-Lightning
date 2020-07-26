@@ -1,0 +1,177 @@
+<rt-scene>
+
+	<camera>
+		<lookat vector3="0.0 0.0 1.0" />
+		<eye vector3="0.0 0.0 0.0" />
+		<up vector3="0.0 1.0 0.0" />
+		<fov angle="90 deg" />
+		<near double="0.0001" />
+		<far double="100000000.0" />
+	</camera>
+
+	<image>
+		<width double="256" />
+		<height double="256" />
+		<bgcolor color="0.0 0.0 0.0" />
+		<num_samples int="200"/>
+	</image>
+
+	<materials>
+		<simplemat id="diffuse_left">
+			<diffuse color="0.306 0.129 0.122" />
+			<specular color="0.0 0.0 0.0" />
+			<reflect color="0.0 0.0 0.0" />
+			<transmit color="0.0 0.0 0.0" />
+			<textureName path="s.bmp"/>
+			<eta double="0.0"/>
+			<n double="0"/>
+			<isreflect bool="false"/>
+			<istransmit bool="false"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+		<simplemat id="diffuse_right">
+			<diffuse color="0.0 0.034 0.245" />
+			<specular color="0.0 0.0 0.0" />
+			<reflect color="0.0 0.0 0.0" />
+			<transmit color="0.0 0.0 0.0" />
+			<eta double="0.0"/>
+			<n double="0"/>
+			<isreflect bool="false"/>
+			<istransmit bool="false"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+		<simplemat id="diffuse_back">
+			<diffuse color="0.1403 0.09 0.04" />
+			<specular color="0.0 0.0 0.0" />
+			<reflect color="0.0 0.0 0.0" />
+			<transmit color="0.0 0.0 0.0" />
+			<eta double="0.0"/>
+			<n double="0"/>
+			<isreflect bool="false"/>
+			<istransmit bool="false"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+		<simplemat id="diffuse_front">
+			<diffuse color="0 0 0" />
+			<specular color="0.0 0.0 0.0" />
+			<reflect color="0.0 0.0 0.0" />
+			<transmit color="0.0 0.0 0.0" />
+			<eta double="0.0"/>
+			<n double="0"/>
+			<isreflect bool="false"/>
+			<istransmit bool="false"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+		<simplemat id="diffuse_top">
+			<diffuse color="0.34 0.34 0.34" />
+			<specular color="0.0 0.0 0.0" />
+			<reflect color="0.0 0.0 0.0" />
+			<transmit color="0.0 0.0 0.0" />
+			<eta double="0.0"/>
+			<n double="0"/>
+			<isreflect bool="false"/>
+			<istransmit bool="false"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+		<simplemat id="diffuse_bottom">
+			<diffuse color="0.14 0.24 0.14" />
+			<specular color="0.0 0.0 0.0" />
+			<reflect color="0.0 0.0 0.0" />
+			<transmit color="0.0 0.0 0.0" />
+			<eta double="0.0"/>
+			<n double="0"/>
+			<isreflect bool="false"/>
+			<istransmit bool="false"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+		<simplemat id="glass">
+			<diffuse color="0.00 0.00 0.00" />
+			<specular color="0.999 0.999 0.999" />
+			<reflect color="0.1 0.1 0.1" />
+			<transmit color="0.9 0.9 0.9" />
+			<eta double="1.5"/>
+			<n double="1000" />
+			<isreflect bool="true"/>
+			<istransmit bool="true"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+		<simplemat id="mirror">
+			<diffuse color="0.00 0.00 0.0" />
+			<specular color="0.8 0.8 0.8" />
+			<reflect color="1 1 1" />
+			<transmit color="0 0 0" />
+			<eta double="1"/>
+			<n double="1000" />
+			<isreflect bool="true"/>
+			<istransmit bool="false"/>
+			<istexture bool="false"/>
+			<texture image=""/>
+		</simplemat>
+	</materials>
+
+	<objects>
+		<sphere material="diffuse_right">
+			<center vector3="100000 0 0.0" />
+			<radius double="100060" />
+		</sphere>
+		<sphere material="diffuse_left">
+			<center vector3="-100000 0 0.0" />
+			<radius double="100060" />
+		</sphere>
+		<sphere material="diffuse_bottom">
+			<center vector3="0 100000 0.0" />
+			<radius double="100060" />
+		</sphere>
+		<sphere material="diffuse_top">
+			<center vector3="0 -100000 0.0" />
+			<radius double="100060" />
+		</sphere>
+		<sphere material="diffuse_back">
+			<center vector3="0 0 -100000.0" />
+			<radius double="100100" />
+		</sphere>
+		<sphere material="diffuse_front">
+			<center vector3="0 0 100000.0" />
+			<radius double="100100" />
+		</sphere>
+
+		<sphere material="mirror">
+			<center vector3="17 -35 68" />
+			<radius double="15" />
+		</sphere>
+		<sphere material="glass">
+			<center vector3="-20 -35 60.0" />
+			<radius double="13" />
+		</sphere>
+
+
+	</objects>
+
+	<lights>
+
+		<!-- <arealight>
+			<position vector3="0.0 40 70.0" />
+			<color color="40 40 40" />
+			<radius double = "5"/>
+			<ka double="0.001" />
+			<sample_rate int= "6"/>
+		</arealight> -->
+
+		
+	</lights>
+
+	<integrator>
+		<montecarlo>
+			<depth-of-recursion int="2" />
+		</montecarlo>
+	</integrator>
+
+
+</rt-scene>
